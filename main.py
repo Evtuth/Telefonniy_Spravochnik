@@ -10,6 +10,10 @@
 # 2) Вывести всех
 # 3) Поиск по фамилии
 
+from data_input import *
+from data_output import *
+from data_delete import *
+from data_change import *
 
 action = int(input('Выберите номер желаемой процедуры:'
                     '\n 1. Ввести данные в справочник'
@@ -23,25 +27,24 @@ action = int(input('Выберите номер желаемой процеду�
 print(action)
 
 if action == 1:
-    from data_input import *
+    surname = input('Введите фамилию: ')
+    name = input('Введите имя: ')
+    patronymic = input('Введите отчество: ')
+    number = input('Введите номер телефона: ')
     Data_input(surname, name, patronymic, number)
 else: 
-    if action == 2:
-        from data_output import Data_output_all
+    if action == 2:        
         Data_output_all()
     else:
-        if action == 3:
-            from data_output import Search
+        if action == 3:            
             surname = input('Введите искомую фамилию: ')
             Search(surname)
         else:
-            if action == 4:
-                from data_delete import *
+            if action == 4:                
                 index = int(input('Введите номер удаляемой строки: '))
                 Data_delete(index) 
             else:
-                if action == 5:
-                    from data_change import *
+                if action == 5:                    
                     stroka = int(input('Введите номер изменяемой строки: ')) 
                     Data_change(stroka)
                 else:
